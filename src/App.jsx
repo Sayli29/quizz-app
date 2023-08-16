@@ -1,6 +1,8 @@
-import { Button, ButtonGroup } from '@chakra-ui/react'
 import { createClient } from "@supabase/supabase-js";
 import {useState, useEffect} from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Landing from '../pages/Landing/Landing';
+import Dashboard from "../pages/Dashboard/Dashboard";
  
 const url = "https://wlfzthnhnlvawdddjbtq.supabase.co";
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndsZnp0aG5obmx2YXdkZGRqYnRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIxNjk4MDgsImV4cCI6MjAwNzc0NTgwOH0.suZb-G8fKanvz6NqWGS3Ga9Ccilotw5SRoPXonXxZcw"
@@ -31,18 +33,25 @@ function App() {
     })
   }
 
-
-  if (!session) {
-    return (
-      <>
-        <Button colorScheme='blue' onClick={handleClick}>Button</Button>
-      </>
+  return(
+    <>
+        <Routes>
+          <Route path="/" element={<Landing session={session} handleClick={handleClick}/>} />
+          <Route path="/dashboard" element={<Dashboard/>} /> 
+        </Routes>
+    </>
+  );
+  // if (!session) {
+  //   return (
+  //     <>
+  //       <Button colorScheme='blue' onClick={handleClick}>Button</Button>
+  //     </>
       
-    )
-  }
-  else {
-    return (<div>Logged in!</div>)
-  }
+  //   )
+  // }
+  // else {
+  //   return (<div>Logged in!</div>)
+  // }
 
   // return (
   //   <>
