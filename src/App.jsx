@@ -4,8 +4,12 @@ import {Routes, Route} from 'react-router-dom';
 import Landing from '../pages/Landing/Landing';
 import Dashboard from "../pages/Dashboard/Dashboard";
  
-const url = "https://wlfzthnhnlvawdddjbtq.supabase.co";
-const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndsZnp0aG5obmx2YXdkZGRqYnRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIxNjk4MDgsImV4cCI6MjAwNzc0NTgwOH0.suZb-G8fKanvz6NqWGS3Ga9Ccilotw5SRoPXonXxZcw"
+// const url = "https://wlfzthnhnlvawdddjbtq.supabase.co";
+// const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndsZnp0aG5obmx2YXdkZGRqYnRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIxNjk4MDgsImV4cCI6MjAwNzc0NTgwOH0.suZb-G8fKanvz6NqWGS3Ga9Ccilotw5SRoPXonXxZcw"
+// const supabase = createClient(url, api);
+
+const url = import.meta.env.VITE_REACT_URL;
+const api = import.meta.env.VITE_REACT_API;
 const supabase = createClient(url, api);
 
 function App() {
